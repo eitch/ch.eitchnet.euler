@@ -6,30 +6,45 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SieveOfEratosthenes implements Serializable {
 
 	private static final long serialVersionUID = -2366203908363600724L;
 
-	//private static final org.slf4j.Logger logger = LoggerFactory.getLogger(SieveOfEratosthenes.class);
+	private static final Logger logger = LoggerFactory.getLogger(SieveOfEratosthenes.class);
 
 	private int searchTo;
 	private List<Number> numbers;
 	private List<Number> possiblePrimes;
 	private int numberOfPrimesFound;
 
-	public SieveOfEratosthenes(int searchTo) {
+	private boolean debug;
+
+	public SieveOfEratosthenes(int searchTo, boolean debug) {
+		this.debug = debug;
 		this.searchTo = searchTo;
+
+		if (this.debug)
+			logger.info("Building numbers database with " + this.searchTo + " entries.");
+
 		this.numbers = new LinkedList<Number>();
 		for (int i = 2; i <= this.searchTo; i++) {
 			this.numbers.add(new Number(i));
 		}
+
+		if (this.debug)
+			logger.info("Building possiblePrimes database with " + this.searchTo + " entries.");
+
 		this.possiblePrimes = new LinkedList<Number>(this.numbers);
 		this.numberOfPrimesFound = 0;
 	}
 
 	public List<Integer> doSieveOfEratosthenes() {
 
-		//logger.info("Starting...");
+		if (this.debug)
+			logger.info("Starting...");
 
 		// Ein Index mit dem nächsten Primzahl beim start muss das immer die Zahl 2
 		// sein, was als erstes in der Reihe sein soll, deswegen wir hier darauf

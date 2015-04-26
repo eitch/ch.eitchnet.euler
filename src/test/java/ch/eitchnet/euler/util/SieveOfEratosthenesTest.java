@@ -30,13 +30,13 @@ public class SieveOfEratosthenesTest extends EulerTest {
 
 	@Test
 	public void shouldFindPrimesSmaller10() {
-		List<Integer> primes = new SieveOfEratosthenes(10).doSieveOfEratosthenes();
+		List<Integer> primes = new SieveOfEratosthenes(10, true).doSieveOfEratosthenes();
 		assertEquals(4, primes.size());
 	}
 
 	@Test
 	public void shouldFindPrimesSmaller1000() {
-		List<Integer> primes = new SieveOfEratosthenes(1000).doSieveOfEratosthenes();
+		List<Integer> primes = new SieveOfEratosthenes(1000, true).doSieveOfEratosthenes();
 		assertEquals(168, primes.size());
 	}
 }
