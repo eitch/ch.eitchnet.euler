@@ -39,6 +39,6 @@ public class Euler003_LargestPrimeFactorTest extends EulerTest {
 		Euler003_LargestPrimeFactor largestPrimeFactor = new Euler003_LargestPrimeFactor(n);
 		long result = largestPrimeFactor.calculate();
 		logger.info("Largest prime factor for " + 13_195L + " is " + result);
-		assertEquals(29L, result);
+		assertEquals(6_857L, result);
 	}
 }

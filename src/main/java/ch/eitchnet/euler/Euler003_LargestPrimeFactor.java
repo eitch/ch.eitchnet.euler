@@ -15,6 +15,8 @@
  */
 package ch.eitchnet.euler;
 
+import ch.eitchnet.euler.util.PrimeGenerator;
+
 /**
  * @author Robert von Burg <eitch@eitchnet.ch>
  */
@@ -28,10 +30,18 @@ public class Euler003_LargestPrimeFactor extends Euler {
 
 	public long calculate() {
 
-		long result = 0L;
+		PrimeGenerator pg = new PrimeGenerator(this.n, false);
+		long value = this.n;
+		long prime = pg.next();
+		while (pg.hasNext()) {
+			if (value % prime == 0) {
+				value /= prime;
+				if (value == 1)
+					break;
+			}
+			prime = pg.next();
+		}
 
-		
-
-		return result;
+		return prime;
 	}
 }
