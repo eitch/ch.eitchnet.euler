@@ -30,7 +30,7 @@ public class Euler003_LargestPrimeFactor extends Euler {
 
 	public long calculate() {
 
-		PrimeGenerator pg = new PrimeGenerator(this.n, false);
+		PrimeGenerator pg = new PrimeGenerator(this.n / 2, false);
 		long value = this.n;
 		long prime = pg.next();
 		while (pg.hasNext()) {
