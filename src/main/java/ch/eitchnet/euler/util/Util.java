@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Robert von Burg <eitch@eitchnet.ch>
+ * Copyright 2015 Robert von Burg <eitch@eitchnet.ch>
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,5 +42,22 @@ public class Util {
 		} else {
 			return nanos + "ns"; //$NON-NLS-1$
 		}
+	}
+
+	public static boolean isPalindrom(long value) {
+		if (value < 0)
+			throw new IllegalArgumentException("Negative numbers are not palindrome!");
+		if (value < 10)
+			return true;
+		String valueS = Long.valueOf(value).toString();
+		int length = valueS.length();
+		int middle = length / 2;
+		for (int i = 0; i <= middle; i++) {
+			if (valueS.charAt(i) != valueS.charAt(length - (i + 1))) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 }
