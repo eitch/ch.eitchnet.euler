@@ -29,12 +29,12 @@ import ch.eitchnet.euler.EulerTest;
 /**
  * @author Robert von Burg <eitch@eitchnet.ch>
  */
-public class PrimeGeneratorTest extends EulerTest {
+public class LongPrimeIteratorTest extends EulerTest {
 
 	@Test
 	public void shouldGeneratePrimesMax10() {
 
-		LongPrimeIterator primeGenerator = new LongPrimeIterator(10);
+		PrimeGenerator primeGenerator = new PrimeGenerator(10, false);
 
 		Long prime;
 
@@ -59,19 +59,19 @@ public class PrimeGeneratorTest extends EulerTest {
 
 	@Test
 	public void shouldFindPrimesSmaller10() {
-		List<Long> primes = new LongPrimeIterator(10).calculateAll(true);
+		List<Long> primes = new PrimeGenerator(10, false).calculateAll(true);
 		assertEquals(4, primes.size());
 	}
 
 	@Test
 	public void shouldFindPrimesSmaller1000() {
-		List<Long> primes = new LongPrimeIterator(1000).calculateAll(true);
+		List<Long> primes = new PrimeGenerator(1000, false).calculateAll(true);
 		assertEquals(168, primes.size());
 	}
 
 	@Test
 	public void shouldFindPrimesSmaller7920() {
-		List<Long> primes = new LongPrimeIterator(7920).calculateAll(true);
+		List<Long> primes = new PrimeGenerator(7920, false).calculateAll(true);
 		assertEquals(1000, primes.size());
 	}
 }

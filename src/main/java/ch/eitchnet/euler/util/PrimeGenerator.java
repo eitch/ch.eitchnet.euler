@@ -53,7 +53,7 @@ public class PrimeGenerator implements Iterator<Long> {
 	@Override
 	public Long next() {
 		if (!hasNext())
-			throw new NoSuchElementException("PrimeNumberGenerator has no more elements (max " + this.max
+			throw new NoSuchElementException(getClass().getSimpleName() + " has no more elements (max " + this.max
 					+ " value reached)!");
 
 		long currentPrime = this.nextPrime;
