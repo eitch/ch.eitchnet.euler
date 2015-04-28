@@ -64,6 +64,6 @@ public class PrimeUtilTest extends EulerTest {
 	public void test4() {
 
 		PrimeUtil primeUtil = new PrimeUtil();
-		logger.info("" + primeUtil.getPrimesUptoN(1000).size());
+		logger.info("There are " + primeUtil.getPrimesUptoN(1000).size() + " primes with max value of 1000");
 	}
 }
