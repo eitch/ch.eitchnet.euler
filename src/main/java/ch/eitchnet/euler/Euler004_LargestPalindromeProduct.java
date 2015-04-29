@@ -20,7 +20,7 @@ import ch.eitchnet.euler.util.Util;
 /**
  * @author Robert von Burg <eitch@eitchnet.ch>
  */
-public class Euler004_LargestPalindromeProduct extends EulerTest {
+public class Euler004_LargestPalindromeProduct extends Euler {
 
 	private int nrOfDigits;
 
