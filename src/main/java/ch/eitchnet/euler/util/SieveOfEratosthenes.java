@@ -44,7 +44,7 @@ public class SieveOfEratosthenes implements Serializable {
 		if (this.debug)
 			logger.info("Building numbers database with " + this.searchTo + " entries.");
 
-		this.numbers = new LinkedList<Number>();
+		this.numbers = new LinkedList<>();
 		for (int i = 2; i <= this.searchTo; i++) {
 			this.numbers.add(new Number(i));
 		}
@@ -52,7 +52,7 @@ public class SieveOfEratosthenes implements Serializable {
 		if (this.debug)
 			logger.info("Building possiblePrimes database with " + this.searchTo + " entries.");
 
-		this.possiblePrimes = new LinkedList<Number>(this.numbers);
+		this.possiblePrimes = new LinkedList<>(this.numbers);
 		this.numberOfPrimesFound = 0;
 	}
 

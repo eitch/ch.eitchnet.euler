@@ -30,7 +30,7 @@ public final class PrimeUtil {
 	public int cachedMaxPrime;
 
 	public PrimeUtil() {
-		primes = new ArrayList<Integer>();
+		primes = new ArrayList<>();
 		// initial seed
 		primes.addAll(Arrays.asList(2, 3, 5, 7, 11, 13));
 		cachedMaxPrime = primes.get(primes.size() - 1);
@@ -107,7 +107,7 @@ public final class PrimeUtil {
 		validateOutOfBound(n);
 
 		if (n < cachedMaxPrime) {
-			List<Integer> list = new ArrayList<Integer>();
+			List<Integer> list = new ArrayList<>();
 			for (int i = 0; primes.get(i) <= n; i++) {
 				list.add(i);
 			}
